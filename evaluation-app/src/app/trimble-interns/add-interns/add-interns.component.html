@@ -1,0 +1,48 @@
+<body>
+<div class="add-intern-form">
+  <h1>Add an Intern</h1>
+
+  <mat-form-field>
+    <mat-label>First name</mat-label>
+    <input matInput required [(ngModel)]="internFirstName" />
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Last name</mat-label>
+    <input matInput required [(ngModel)]="internLastName" />
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Gender</mat-label>
+    <input matInput required [(ngModel)]="internGender" />
+  </mat-form-field>
+  <br>
+      <!-- <mat-label>Age {{ internAge }}</mat-label> -->
+    
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Choose birth date</mat-label>
+        <input matInput [value]="internBirthDate" [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        
+      </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <mat-label>Faculty</mat-label>
+            <textarea matInput  required  [(ngModel)]="internFaculty"></textarea>
+        </mat-form-field>
+    
+        <mat-form-field >
+            <mat-label>Choose a departament </mat-label>
+            <mat-select  *ngIf="departamets" [(ngModel)]="selectedDepartamentId">
+                <mat-option *ngFor="let depat of departamets" [value]="depat.id">{{depat.name}}</mat-option>
+            </mat-select>
+          </mat-form-field> 
+
+      <button mat-button (click)="addIntern()">Add</button>
+    
+        </div>
+      
+      </body>

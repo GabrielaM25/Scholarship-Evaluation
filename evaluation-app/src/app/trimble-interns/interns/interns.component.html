@@ -1,0 +1,24 @@
+<div *ngFor="let intern of interns" class="interns">
+<mat-card class="intern-card">
+ 
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>{{intern.firstName}}</mat-card-title>
+      <mat-card-subtitle>{{intern.secondName}}</mat-card-subtitle>
+     
+
+      
+    </mat-card-header>
+    <p>Birdth Date{{intern.birthDate}} </p>
+    <p>Faculty :{{intern.faculty}} </p>
+    <p>Gender :{{intern.gender}} </p>
+    <mat-card-content>
+     
+  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button id="edit"> <mat-icon>edit</mat-icon></button>
+      <button mat-icon-button (click)="deleteIntern(intern.id)" id="deletes"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
